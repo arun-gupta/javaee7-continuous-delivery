@@ -1,12 +1,12 @@
 Continuous Delivery using Java EE 7
 ===================================
 
-. Step 1: Enable Arquillian and run on local WildFly
+. Enable Arquillian and run on local WildFly
   (http://blog.arungupta.me/2014/11/enable-arquillian-existing-javaee-project-techtip54/)
-. Step 2: Run Arquillian tests on WildFly/OpenShift
+. Run Arquillian tests on WildFly/OpenShift
   (http://blog.arungupta.me/2014/11/arquillian-tests-wildfly-openshift-techtip55/)
-. Step 3: Enable Jenkins on OpenShift and run Arquillian tests on WildFly (BLOG TBD)
-. Step 4: Setup separate test and production instance (BLOG TBD)
-. Step 5: Use Jenkins hosted outside OpenShift (BLOG TBD)
-. Step 6: Deployment Pipeline using Jenkins Enterprise (BLOG TBD)
-. Step 7: Bamboo? (BLOG TBD)
+. Enable Jenkins on OpenShift and run Arquillian tests on WildFly (BLOG TBD)
+. Setup separate test and production instance (BLOG TBD)
+. Use Jenkins hosted outside OpenShift (BLOG TBD)
+. Deployment Pipeline using Jenkins Enterprise (BLOG TBD)
+. Bamboo? (BLOG TBD)
