@@ -9,4 +9,7 @@ Continuous Delivery using Java EE 7
 . Setup separate test and production instance (BLOG TBD)
 . Use Jenkins hosted outside OpenShift (BLOG TBD)
 . Deployment Pipeline using Jenkins Enterprise (BLOG TBD)
+. Continuous feedback to PR (BLOG TBD)
+. WildFly dev/test/prod servers as Docker images (BLOG TBD)
+. Arquillian cube with WildFly+Docker (BLOG TBD)
 . Bamboo? (BLOG TBD)
