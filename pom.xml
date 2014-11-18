@@ -3,10 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.javaee7.sample</groupId>
-    <artifactId>helloworld</artifactId>
+    <artifactId>javaee7-continuous-delivery</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>helloworld</name>
+    <name>javaee7-continuous-delivery</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.arquillian_core>1.1.5.Final</version.arquillian_core>
@@ -54,7 +54,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>helloworld</finalName>
+        <finalName>javaee7-continuous-delivery</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
