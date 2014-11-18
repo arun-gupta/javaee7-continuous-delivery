@@ -86,7 +86,7 @@
                         <version>2.14.1</version>
                         <configuration>
                             <systemPropertyVariables>
-                                <arquillian.launch>arquillian-wildfly-remote</arquillian.launch>
+                                <arquillian.launch>wildfly-remote</arquillian.launch>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
@@ -110,7 +110,7 @@
                         <version>2.14.1</version>
                         <configuration>
                             <systemPropertyVariables>
-                                <arquillian.launch>arquillian-wildfly-openshift</arquillian.launch>
+                                <arquillian.launch>wildfly-openshift</arquillian.launch>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
