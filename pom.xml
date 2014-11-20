@@ -11,7 +11,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.executable>${env.OPENSHIFT_WILDFLY_DIR}usr/lib/jvm/jdk1.8.0_05/bin/javac</maven.compiler.executable>
+        <!--<maven.compiler.executable>${env.OPENSHIFT_WILDFLY_DIR}usr/lib/jvm/jdk1.8.0_05/bin/javac</maven.compiler.executable>-->
         <maven.compiler.fork>true</maven.compiler.fork>
         <version.arquillian_core>1.1.5.Final</version.arquillian_core>    
     </properties>
@@ -73,26 +73,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <build>
-        <finalName>javaee7-continuous-delivery</finalName>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
     <profiles>
         <profile>
             <id>arquillian-wildfly-remote</id>
@@ -101,6 +81,13 @@
             </activation>
             <build>
                 <plugins>
+                    <plugin>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>2.3</version>
+                        <configuration>
+                            <failOnMissingWebXml>false</failOnMissingWebXml>
+                        </configuration>
+                    </plugin>
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>2.14.1</version>
@@ -126,6 +113,13 @@
             <build>
                 <plugins>
                     <plugin>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>2.3</version>
+                        <configuration>
+                            <failOnMissingWebXml>false</failOnMissingWebXml>
+                        </configuration>
+                    </plugin>
+                    <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>2.14.1</version>
                         <configuration>
@@ -145,6 +139,27 @@
                 </dependency>
             </dependencies>
         </profile>  
+        <profile>
+         <!-- When built in OpenShift the 'openshift' profile will be used when invoking mvn. -->
+         <!-- Use this profile for any OpenShift specific customization your app will need. -->
+         <!-- By default that is to put the resulting archive into the 'deployments' folder. -->
+         <!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
+         <id>openshift</id>
+         <build>
+            <plugins>
+              <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.3</version>
+                    <configuration>
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
+                        <outputDirectory>deployments</outputDirectory>
+                              <warName>ROOT</warName>
+                    </configuration>
+                </plugin>
+            </plugins>
+          </build>
+        </profile>
         <profile>
             <!--
             This profile is used by the Jenkins instance in OpenShift to run tests
