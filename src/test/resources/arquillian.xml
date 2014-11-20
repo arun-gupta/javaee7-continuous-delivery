@@ -12,4 +12,15 @@
             <property name="disableStrictHostChecking">true</property> 
         </configuration>
     </container>
+    <container qualifier="jenkins-openshift">
+        <configuration>
+            <property name="namespace">${env.ARQ_DOMAIN}</property>
+            <property name="application">${env.ARQ_APPLICATION}</property>
+            <property name="libraDomain">rhcloud.com</property>
+            <property name="sshUserName">${env.ARQ_SSH_USER_NAME}</property>
+            <property name="login">arungupta@redhat.com</property>
+            <property name="deploymentTimeoutInSeconds">300</property>
+            <property name="disableStrictHostChecking">true</property> 
+        </configuration>
+    </container>
 </arquillian>
