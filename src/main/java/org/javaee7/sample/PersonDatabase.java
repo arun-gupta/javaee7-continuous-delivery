@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.inject.Singleton;
+import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.NotFoundException;
 
-@Singleton
+@ApplicationScoped
 public class PersonDatabase {
 
     List<Person> persons;
