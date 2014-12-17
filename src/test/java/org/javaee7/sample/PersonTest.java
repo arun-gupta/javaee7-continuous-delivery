@@ -3,11 +3,9 @@ package org.javaee7.sample;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
-import java.util.StringTokenizer;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
@@ -38,7 +36,9 @@ public class PersonTest {
     @Before
     public void setUp() throws MalformedURLException {
         Client client = ClientBuilder.newClient();
-        target = client.target(URI.create(new URL(base, "resources/persons").toExternalForm()));
+        final URI uri = URI.create(new URL(base, "resources/persons").toExternalForm());
+        System.out.println("Endpoint address: " + uri);
+        target = client.target(uri);
         target.register(Person.class);
     }
 
